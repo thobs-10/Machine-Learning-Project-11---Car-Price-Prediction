@@ -10,9 +10,9 @@ import logging
 
 
 # read the saved pickle packages
-model = pickle.load(open('C:\\Users\\Cash Crusaders\\Desktop\\My Portfolio\\Projects\\Data Science Projects\\Machine Learning Project 11 - Car Price Prediction\\dataset\model.pkl','rb'))
+model = pickle.load(open('model.pkl','rb'))
 #scaler = pickle.load(open('C:\\Users\\Cash Crusaders\\Desktop\\My Portfolio\\Projects\\Data Science Projects\\Machine Learning Project 11 - Car Price Prediction\\dataset\\standard_scaler.pkl','rb'))
-df = pd.read_csv('C:\\Users\\Cash Crusaders\\Desktop\\My Portfolio\\Projects\\Data Science Projects\\Machine Learning Project 11 - Car Price Prediction\\dataset\\preprocessed_dataset.csv')
+df = pd.read_csv('dataset/preprocessed_dataset.csv')
 
 st.title("Car Price Prediction")
 
