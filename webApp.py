@@ -38,15 +38,22 @@ if st.button('Predict Price'):
     input_df = pd.DataFrame(data=input_tuple)
 
     features = []
+    # try
+    model_map=df['name'].value_counts().to_dict()
+    input_df['name']=input_df['name'].map(model_map)
+    features.append(input_df['name'])
+    model_map=df['company'].value_counts().to_dict()
+    input_df['company']=input_df['company'].map(model_map)
+    features.append(input_df['company'])
     # the code says, for each unique value in column race, find the unique value and associate it with the unique key between(0, 1, 2,...)
     # and place that in label encoder race as a dictionary
     features.append(input_df['Mileage'])
 
-    label_encoding_name = {value: key for key, value in enumerate(input_df['name'].unique())}
-    features.append(input_df['name'].map(label_encoding_name))
+    # label_encoding_name = {value: key for key, value in enumerate(df['name'].unique())}
+    # features.append(input_df['name'].map(label_encoding_name))
 
-    label_encoding_company = {value: key for key, value in enumerate(input_df['company'].unique())}
-    features.append(input_df['company'].map(label_encoding_company))  
+    # label_encoding_company = {value: key for key, value in enumerate(df['company'].unique())}
+    # features.append(input_df['company'].map(label_encoding_company))  
     
     features.append(input_df['year'])
 
